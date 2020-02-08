@@ -17,13 +17,13 @@ my_data = pd.read_csv('input.csv')
 IMG_HEIGHT = 306
 IMG_WIDTH = 306
 
-new_model = keras.models.load_model('model_05_02.h5')
+new_model = keras.models.load_model('model_06_02.h5')
 images = []
 
 for i in my_data['Id']:
     
-    path = os.path.join(images_dir, f'{i}.jpg')
-    test_path = os.path.join(test_dir,  f'{i}.jpg')
+    path = os.path.join(images_dir, f'{i}')
+    test_path = os.path.join(test_dir,  f'{i}')
     #check if file exists
     if not os.path.exists(test_path):
         shutil.move(path, test_dir)
@@ -36,7 +36,7 @@ for i in my_data['Id']:
 
 images = np.vstack(images)
 features = new_model.predict(images)
-features = np.around(features, decimals=1).tolist()
+features = np.around(features).tolist()
 
 final_predictions = []
 for i in features:
@@ -48,9 +48,8 @@ for i in features:
         
     elif i == [0.0, 0.0, 1.0]:
         final_predictions.append(0)
-        
 
-print(final_predictions)
+
 
 
 my_data['Category'] = final_predictions
