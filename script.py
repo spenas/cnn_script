@@ -17,7 +17,7 @@ my_data = pd.read_csv('input.csv')
 IMG_HEIGHT = 306
 IMG_WIDTH = 306
 
-new_model = keras.models.load_model('model_06_02.h5')
+new_model = keras.models.load_model('model_07_02.h5')
 images = []
 
 for i in my_data['Id']:
