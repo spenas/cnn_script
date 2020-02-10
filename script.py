@@ -4,11 +4,6 @@ from numpy import genfromtxt
 import os
 import tensorflow as tf
 from tensorflow import keras
-from keras.preprocessing.image import ImageDataGenerator
-from keras.preprocessing.image import img_to_array
-from keras.preprocessing.image import load_img
-import shutil  
-import PIL
 
 images_dir = os.path.abspath('images')
 test_dir = os.path.abspath('test')
@@ -17,7 +12,7 @@ my_data = pd.read_csv('input.csv')
 IMG_HEIGHT = 306
 IMG_WIDTH = 306
 
-new_model = keras.models.load_model('model_07_02.h5')
+new_model = keras.models.load_model('model_05_02.h5')
 images = []
 
 for i in my_data['Id']:
