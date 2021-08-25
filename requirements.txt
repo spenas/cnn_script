@@ -116,7 +116,7 @@ spyder==4.0.1
 spyder-kernels==1.8.1
 tb-nightly==1.15.0a20190806
 tensorboard==2.1.0
-tensorflow==2.0.0rc1
+tensorflow==2.5.1
 tensorflow-estimator==2.1.0
 termcolor==1.1.0
 testpath==0.4.4
